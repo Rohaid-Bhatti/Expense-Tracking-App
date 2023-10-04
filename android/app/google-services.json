@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082925666654",
+    "project_id": "fir-project-5e29e",
+    "storage_bucket": "fir-project-5e29e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082925666654:android:847d853b7128927b4a3fcf",
+        "android_client_info": {
+          "package_name": "com.bhatti.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8obxCUr3oJnZM1MERN3tChEs8h42HgLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
