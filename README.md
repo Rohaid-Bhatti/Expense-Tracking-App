@@ -1,6 +1,6 @@
 # demo
 
-A new Flutter project.
+A Expense Tracking Flutter project.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ The Expense Tracker App is a Flutter application that helps you manage your expe
 
 - **Expense List**: View a list of your recorded expenses, including the ability to edit and delete individual expenses.
 
-- **Profile Screen**: Get your personal information with attractive UI, allowing you to see and update your personal information.
+- **Dashboard**: Get an overview of your expenses with interactive charts and graphs, allowing you to see your expenses categorized by type.
 
 ## Installation
 
@@ -25,10 +25,10 @@ The Expense Tracker App is a Flutter application that helps you manage your expe
 3. Run `flutter pub get` to install the required packages.
 
 4. Configure Firebase for the app:
-    - Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
-    - Follow Firebase's setup instructions to add your Android and iOS apps to the project.
-    - Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) files and place them in the appropriate directories in your project.
-    - Enable Firestore and Firebase Authentication in the Firebase project.
+   - Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
+   - Follow Firebase's setup instructions to add your Android and iOS apps to the project.
+   - Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) files and place them in the appropriate directories in your project.
+   - Enable Firestore and Firebase Authentication in the Firebase project.
 
 5. Build and run the app on your preferred emulator or physical device.
 
@@ -46,6 +46,12 @@ The Expense Tracker App is a Flutter application that helps you manage your expe
 - Navigate to the "Expense List" screen to view a list of all recorded expenses.
 - Tap the "Edit" button to edit an expense or the "Delete" button to remove it.
 
+### Dashboard
+
+- Access the "Dashboard" to see graphical representations of your expenses.
+- Categories are displayed as pie charts, and total expenses are shown.
+- Additionally, recent expenses are displayed on the dashboard.
+
 ## Firebase Integration
 
 The app integrates with Firebase to store expense data and user information. Ensure that you have set up Firebase as mentioned in the installation steps.
@@ -56,4 +62,4 @@ Contributions are welcome! Feel free to open issues and submit pull requests to 
 
 ## License
 
-This app is open-source and available under the [MIT License](LICENSE)
+This app is open-source and available under the [MIT License](LICENSE).

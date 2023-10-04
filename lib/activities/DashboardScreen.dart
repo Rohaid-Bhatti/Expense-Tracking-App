@@ -1,5 +1,6 @@
 import 'package:demo/fragments/ExpenseListFragment.dart';
 import 'package:demo/fragments/ExpenseUploadFragment.dart';
+import 'package:demo/fragments/HomeFragment.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -25,6 +26,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
+            selectedIcon: Icon(Icons.dashboard),
+            icon: Icon(Icons.dashboard_outlined),
+            label: 'Dashboard',
+          ),
+          NavigationDestination(
             selectedIcon: Icon(Icons.add_circle),
             icon: Icon(Icons.add_circle_outline),
             label: 'Add',
@@ -37,6 +43,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ],
       ),
       body: <Widget>[
+        HomeFragment(),
         ExpenseUploadFragment(),
         ExpenseListFragment(),
       ][currentPageIndex],

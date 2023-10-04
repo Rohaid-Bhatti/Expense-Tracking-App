@@ -1,11 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:demo/activities/FAQScreen.dart';
 import 'package:demo/activities/LoginScreen.dart';
 import 'package:demo/activities/ProfileScreen.dart';
 import 'package:demo/controllers/auth_controller.dart';
 import 'package:demo/fragments/ExpenseListFragment.dart';
 import 'package:demo/services/firebase_services.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -160,38 +158,6 @@ class _ExpenseUploadFragmentState extends State<ExpenseUploadFragment> {
       });
     }
   }
-
-  Future<void> showLogOutDialog() async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text(
-            'Are you sure you want to Logout?',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-          ),
-          actions: [
-            TextButton(
-              child: const Text('No'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: Text('Yes'),
-              onPressed: () async {
-                await Get.put(AuthController()).signoutMethod();
-                Get.offAll(() => LoginScreen());
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -199,77 +165,6 @@ class _ExpenseUploadFragmentState extends State<ExpenseUploadFragment> {
         title: const Text('Upload Expense'),
         centerTitle: true,
       ),
-
-      drawer: Drawer(
-        child: Container(
-          child: ListView(
-            padding: EdgeInsets.all(0),
-            children: [
-              Container(
-                height: 200,
-                padding:
-                const EdgeInsets.only(left: 24, right: 24, top: 40, bottom: 24),
-                color: Colors.white,
-                child: const Center(
-                  child: Text(
-                    'Drawer Head',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 5,),
-              ListTile(
-                horizontalTitleGap: 0,
-                visualDensity: VisualDensity.compact,
-                leading: Icon(Icons.person, size: 20),
-                title: Text("My Profile", style: TextStyle()),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
-                },
-              ),
-              ListTile(
-                horizontalTitleGap: 0,
-                visualDensity: VisualDensity.compact,
-                leading: const Icon(Icons.manage_history, size: 20),
-                title: const Text("Expense History", style: TextStyle()),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ExpenseListFragment()));
-                },
-              ),
-              ListTile(
-                horizontalTitleGap: 0,
-                visualDensity: VisualDensity.compact,
-                leading: Icon(Icons.question_mark_rounded, size: 20),
-                title: Text("FAQs", style: TextStyle()),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FAQScreen()));
-                },
-              ),
-              ListTile(
-                horizontalTitleGap: 0,
-                visualDensity: VisualDensity.compact,
-                leading: Icon(Icons.logout, size: 20),
-                title: Text("Logout", style: TextStyle()),
-                onTap: () {
-                  showLogOutDialog();
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
